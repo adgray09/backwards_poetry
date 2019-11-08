@@ -1,4 +1,4 @@
-from random import shuffle
+from random import shuffle, random, randint
 
 poem = '''If you are a dreamer, come in,
 If you are a dreamer, a wisher, a liar,
@@ -33,9 +33,20 @@ def lines_printed_random():
     to the original number of lines in the poem 
     (line numbers don't need to be printed). 
     Hint: try using a loop and randint()  '''
-shuffle(lines)
-print(" \n".join(lines)) 
-lines = poem.split("\n")
+#shuffle(lines)
+#print(" \n".join(lines)) 
+#lines = poem.split("\n")
+
+
+i = 0 
+while i < len(lines):
+    random_index = randint(1, len(lines) - 1)
+    item = lines[random_index]
+    print(item)
+    i += 1
+    
+    
+
 
 
 #TODO: 
