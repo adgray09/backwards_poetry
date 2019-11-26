@@ -9,21 +9,21 @@ Come in!
 Come in!
 '''
 lines = poem.split("\n")
-def lines_printed_backwards(poem_lines_list):
+def lines_printed_backwards(lines):
     '''This function takes in a list of strings 
     containing the lines of your poem as arguments and will 
     print the poem lines out in reverse with the line numbers reversed'''
-lines.reverse()
-line_count = len(lines)
+    lines.reverse()
+    line_count = len(lines)
 
-for i in range(len(lines)):
-    line = lines[i]
-    print(line)
-    print(line_count)
-    line_count -= 1
+    for i in range(len(lines)):
+        line = lines[i]
+        print(line)
+        print(line_count)
+        line_count -= 1
     
 
-def lines_printed_random():
+def lines_printed_random(lines):
     '''will randomly select lines from a list of strings
     and print them out in random order'''
     ''' Your code should implement the lines_printed_random() 
@@ -33,17 +33,35 @@ def lines_printed_random():
     to the original number of lines in the poem 
     (line numbers don't need to be printed). 
     Hint: try using a loop and randint()  '''
-#shuffle(lines)
-#print(" \n".join(lines)) 
-#lines = poem.split("\n")
+# shuffle(lines)
+# print(" \n".join(lines)) 
+# lines = poem.split("\n")
 
+    i = 0 
+    while i < len(lines):
+        random_index = randint(1, len(lines) - 1)
+        item = lines[random_index]
+        print(item)
+        i += 1
 
-i = 0 
-while i < len(lines):
-    random_index = randint(1, len(lines) - 1)
-    item = lines[random_index]
-    print(item)
-    i += 1
+# def user_choice():
+#     question = input("enter in your own poem ")
+#     lines = question.split("\n")
+    
+#     for i in range(len(lines)):
+#         line = lines[i]
+#         print(line)
+
+def sort_by_length_of_line(lines):
+    '''Takes in list of strings and sorts by length of characters. '''
+    line_size = sorted(lines, key=len)
+    print(line_size)
+        
+        
+    
+    
+    
+    
     
     
 
@@ -52,6 +70,5 @@ while i < len(lines):
 #TODO: 
 #print(poem)
 #testing code
-#lines_printed_backwards(lines)
-lines_printed_random()
+sort_by_length_of_line(lines)
 
